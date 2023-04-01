@@ -1,0 +1,28 @@
+/// Variables ///
+ 
+// Colors
+$background_color: #160a1d;
+
+// Fonts
+$header_font: Arial, Helvetica, sans-serif;
+$text_font: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+body {
+    background-color: $background_color;
+    color: #EBEBE2;
+    
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.App {
+    display: grid;
+
+}
