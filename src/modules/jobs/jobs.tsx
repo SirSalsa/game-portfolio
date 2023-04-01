@@ -1,6 +1,8 @@
 function Jobs() {
     return(
-        <p>swag</p>
+        <div className="Jobs_wrapper">
+            <p>swag</p>
+        </div>
     );
 }
 

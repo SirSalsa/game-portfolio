@@ -1,0 +1,21 @@
+@import '../app/App.scss';
+
+.Intro_wrapper {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#title_container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items:flex-start;
+}
+
+#portrait_container {
+    display: flex;
+    flex-flow: column;
+}
+
+#portrait_container > img {
+    width: 400px;
+}
