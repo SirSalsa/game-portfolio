@@ -1,4 +1,3 @@
-import React from "react"
 import Intro from "../intro/intro"
 import Jobs from "../jobs/jobs"
 import "./App.scss"

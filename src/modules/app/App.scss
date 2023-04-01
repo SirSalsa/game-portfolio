@@ -1,15 +1,4 @@
-/// Variables ///
- 
-// Colors
-$background_color: #160a1d;
-$object_color: #483B4C;
-
-$text_color: #EBEBE2;
-$header_color: #C98A30;
-
-// Fonts
-$header_font: Arial, Helvetica, sans-serif;
-$text_font: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+@use "../../css/style_settings.scss" as *;
 
 * {
     margin: 0;
@@ -30,6 +19,6 @@ body {
 
 .App {
     display: grid;
-    grid-template-columns: 0.55fr 1fr 0.55fr;
+    grid-template-columns: 0.25fr 1fr 0.25fr;
     grid-template-rows: 0.15fr auto 0.2fr;
 }
