@@ -1,13 +1,12 @@
 @use "../../css/style_settings.scss" as *;
 
 .Jobs_wrapper {
-    display: grid;
+    display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
 
     grid-column: 2/3;
     grid-row: 2/3;
-
-    grid-template-rows: auto auto;
 }
 
 #header_container {
@@ -15,8 +14,8 @@
     flex-flow: column nowrap;
     align-items: center;
 
-    grid-row: 1/2;
     margin: 50px 0 30px 0;
+    padding: 10px 0 20px 0;
 
     background-color: $object_color;
 }
@@ -25,8 +24,6 @@
     display: flex;
     flex-flow: row;
     justify-content: center;
-
-    grid-row: 2/3;
 }
 
 #header_container > h1 {

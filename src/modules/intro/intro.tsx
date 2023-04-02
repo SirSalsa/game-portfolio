@@ -1,5 +1,5 @@
 import "./intro.scss"
-import portrait from "../../media/portrait.jpg"
+import portrait from "../../media/portrait.png"
 
 function Intro() {
     return(
