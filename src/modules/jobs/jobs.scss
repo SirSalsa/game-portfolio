@@ -32,6 +32,10 @@
     color: $header_color;
 }
 
+#header_container > p {
+    font-family: $text_font;
+}
+
 #projects_container > article {
     margin: 20px 50px 20px 50px;
 }

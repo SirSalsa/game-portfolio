@@ -7,6 +7,7 @@
     display: grid;
     align-items: center;
     grid-template-columns: 60% 40%;
+    grid-template-rows: auto auto;
     padding:0 40px 0 40px;
 }
 
@@ -17,6 +18,7 @@
     justify-self: left;
 
     grid-column: 1/2;
+    grid-row: 1/2;
 }
 
 #title_container > h1 {
@@ -38,8 +40,50 @@
 
     align-items: end;
     grid-column: 2/3;
+    grid-row: 1/2;
 }
 
 #portrait_container > img {
     width: 350px;
+}
+
+.About_wrapper {
+    grid-column: 1/3;
+    grid-row: 2/3;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: $background_color_light;
+}
+
+#desc_container {
+    grid-column: 1/2;
+}
+
+#desc_container > h2 {
+    font-family: $header_font;
+}
+
+#desc_container > p {
+    font-family: $text_font;
+}
+
+#background_container {
+    grid-column: 2/3;
+}
+
+#background_container > article {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+#background_img {
+    width: 90px;
+    grid-column: 1/2;
+}
+
+#background_container > article > div {
+    grid-column: 2/3;
 }
