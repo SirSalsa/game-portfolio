@@ -2,11 +2,12 @@
 
 .Intro_wrapper {
     grid-column: 2/3;
-    grid-row: 1/2;
+    grid-row: 2/3;
 
     display: grid;
     align-items: center;
     grid-template-columns: 60% 40%;
+    padding:0 40px 0 40px;
 }
 
 #title_container {

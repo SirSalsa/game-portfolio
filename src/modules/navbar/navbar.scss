@@ -1,0 +1,38 @@
+@use "../../css/style_settings.scss" as *;
+
+.Navbar_wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    //Make the navbar stick around if scrolling
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    grid-column: 1/4;
+    grid-row: 1/2;
+
+    grid-template-columns: 15% 25% 45% 15%;
+
+    font-family: $header_font;
+    height: 60px;
+    background-color: $object_color;
+    min-width: 100%;
+    margin-bottom: 40px;
+}
+
+#left_container {
+    display: flex;
+    justify-content: flex-start;
+
+    grid-column: 2/3;
+}
+
+#right_container {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 14px;
+    grid-column: 3/4;
+}
