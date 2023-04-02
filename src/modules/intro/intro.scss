@@ -91,6 +91,10 @@ button {
     margin-top: 20px;
 }
 
+button:hover {
+    background-color: $button_hover_color;
+}
+
 button > img {
     width: 40px;
 }
@@ -99,4 +103,5 @@ button > p {
     font-family: $text_font;
     color: $text_color;
     font-weight: 700;
+    padding-left: 10px;
 }
