@@ -1,3 +1,4 @@
+import Footer from "../footer/footer"
 import Intro from "../intro/intro"
 import Jobs from "../jobs/jobs"
 import Navbar from "../navbar/navbar"
@@ -10,6 +11,7 @@ function App(): JSX.Element {
       <Navbar/>
       <Intro/>
       <Jobs/>
+      <Footer/>
     </div>
   )
 }

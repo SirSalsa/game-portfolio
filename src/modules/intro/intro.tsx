@@ -1,6 +1,6 @@
 import "./intro.scss"
-import portrait from "../../media/portrait.png"
-import cv_url from "../../media/cv.png"
+import portrait from "./media/portrait.png"
+import cv_url from "./media/cv.png"
 
 function Intro() {
     return(

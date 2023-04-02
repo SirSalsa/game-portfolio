@@ -1,0 +1,28 @@
+@use "../../css/style_settings.scss" as *;
+
+.Footer_wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    grid-column: 1/4;
+    grid-row: 4/5;
+
+    padding: 20px;
+    background-color: $object_color;
+}
+
+h1 {
+    font-family: $header_font;
+    color: $header_color;
+}
+
+p {
+    font-family: $text_font;
+}
+
+#contactinfo_container {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-top: 20px;
+    justify-content: space-between;
+}
