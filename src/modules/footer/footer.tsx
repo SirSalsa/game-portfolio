@@ -19,10 +19,8 @@ function Footer() {
                     <img src={phone} alt="Phone img" />
                 </a>
             </div>
-            
             <div id="legal_text">
-                <p>Copyright © 2023 by Torsten Lareke. All rights reserved.</p>
-                <p>Any games or trademarks shown on this website are the property of their respective owners.</p>
+                <p>Copyright © 2023 by Torsten Lareke. All rights reserved. Any games or trademarks shown on this website are the property of their respective owners.</p>
             </div>
         </div>
     );
