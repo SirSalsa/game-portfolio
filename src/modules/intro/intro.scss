@@ -76,6 +76,13 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    align-items: center;
+
+    transition: transform 0.25s ease-out;
+}
+
+#cv_button_wrapper:hover {
+    transform: scale(1.15);
 }
 
 button {
@@ -89,6 +96,7 @@ button {
 
 button:hover {
     background-color: $button_hover_color;
+    cursor: pointer;
 }
 
 button > img {

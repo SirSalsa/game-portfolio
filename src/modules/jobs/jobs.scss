@@ -24,10 +24,19 @@ main {
 
 #projects_container {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: center;
 
     padding-bottom: 30px;
+}
+
+#projects_container > article {
+    transition: transform 0.25s ease-out;
+}
+
+#projects_container > article:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 #header_container > h1 {
