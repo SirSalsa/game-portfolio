@@ -1,12 +1,14 @@
 @use "../../css/style_settings.scss" as *;
 
+main {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
 .Jobs_wrapper {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-
-    grid-column: 2/3;
-    grid-row: 3/4;
 }
 
 #header_container {
@@ -55,5 +57,13 @@
 }
 
 #projects_container > article > img {
-    width: 250px;
+    width: 380px;
+}
+
+.OP_wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    padding-bottom: 50px;
 }

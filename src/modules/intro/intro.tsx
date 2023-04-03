@@ -7,7 +7,7 @@ function Intro() {
         <div className="Intro_wrapper">
             <div id="title_container">
                 <h1>Torsten Lareke</h1>
-                <h2>Game designer with a strong technical background</h2>
+                <h2>Level designer with a strong technical background</h2>
             </div>
             <div id="portrait_container">
                 <img src={portrait} alt="Portrait" />
