@@ -39,8 +39,16 @@
     min-height: 60px;
 }
 
-h2 {
+#right_container > h2 {
     display: flex;
     min-height: inherit;
     align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#right_container > h2:hover {
+    color: $navbar_text_hover_color;
+    cursor: pointer;
+    background-color:$navbar_hover_color;
 }
