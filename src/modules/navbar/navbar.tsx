@@ -1,12 +1,30 @@
+import { useEffect, useState } from 'react';
 import "./navbar.scss"
 
 function Navbar() {
+    const [navbarHeight, setNavbarHeight] = useState<number>(0);
+
     const scrollToClass = (className: string) => {
         const target = document.querySelector(`.${className}`) as HTMLElement;
         if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+            const targetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
         }
     };
+
+    useEffect(() => {
+        const navbar = document.querySelector('.Navbar_wrapper') as HTMLElement;
+        if (navbar) {
+            setNavbarHeight(navbar.getBoundingClientRect().height);
+        }
+
+        document.querySelectorAll('#right_container h2').forEach((link) => {
+            link.addEventListener('click', () => {
+                const targetClass = (link.textContent || '').toLowerCase();
+                scrollToClass(targetClass);
+            });
+        });
+    }, []);
 
     return(
         <div className="Navbar_wrapper">

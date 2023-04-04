@@ -16,7 +16,7 @@ main {
     flex-flow: column nowrap;
     align-items: center;
 
-    margin: 50px 0 30px 0;
+    margin-bottom: 30px;
     padding: 10px 0 20px 0;
 
     background-color: $object_color;
@@ -27,7 +27,7 @@ main {
     flex-flow: row wrap;
     justify-content: center;
 
-    padding-bottom: 30px;
+    padding-bottom: 80px;
 }
 
 #projects_container > article {
