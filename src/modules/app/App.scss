@@ -22,3 +22,12 @@ body {
     grid-template-columns: 15% 70% 15%;
     grid-template-rows: 0.15fr auto 0.2fr;
 }
+
+// Tablet breakpoint
+@media (max-width: 1300px) {
+
+    .App {
+        grid-template-columns: 5% 90% 5%;
+    }
+
+}
