@@ -52,3 +52,46 @@
     cursor: pointer;
     background-color:$navbar_hover_color;
 }
+
+// Tablet breakpoint
+@media (max-width: 1050px) {
+
+    .Navbar_wrapper {
+        grid-template-columns: 25% 75%;
+    }
+
+    #left_container {
+        grid-column: 1/2;
+    }
+
+    #left_container > h1 {
+        font-size: 18px;
+        margin-left: 5px;
+    }
+
+    #right_container {
+        grid-column: 2/3;
+        text-align: center;
+    }
+
+    #right_container > h2 {
+        font-size: 15px;
+    }
+}
+
+// Phone breakpoint
+@media (max-width: 550px) {
+
+    .Navbar_wrapper {
+        grid-template-columns: 20% 80%;
+    }
+
+    #left_container > h1 {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    #right_container > h2 {
+        font-size: 12px;
+    }
+}
