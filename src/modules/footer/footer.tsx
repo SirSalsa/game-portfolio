@@ -6,24 +6,24 @@ import phone from "./media/phone.png"
 function Footer() {
     return(
         <div className="Footer_wrapper">
-            <h1>Contact</h1>
+            <h1 id="contact_header">Contact</h1>
             <p id="contact_desc">Want to get in touch? Here are a few ways you can connect with me.</p>
             <div id="contactinfo_container">
                 <div>
                     <a href="mailto:torsten.lareke@hotmail.se">
-                        <img src={email} alt="Email img" />
+                        <img src={email} alt="Email img" id="contact_icon"/>
                     </a>
                     <p id="contact_text">torsten.lareke@hotmail.se</p>
                 </div>
                 <div>
                     <a href="tel:+46-73268-2109">
-                        <img src={phone} alt="Phone img" />
+                        <img src={phone} alt="Phone img" id="contact_icon"/>
                     </a>
                     <p id="contact_text">(+46) 73268-2109</p>
                 </div>
                 <div>
                     <a href="https://www.linkedin.com/in/torsten-lareke/">
-                        <img src={linkedin} alt="Linkedin img" />
+                        <img src={linkedin} alt="Linkedin img" id="contact_icon"/>
                     </a>
                     <p id="contact_text">Torsten Lareke</p>
                 </div>

@@ -11,17 +11,14 @@
     background-color: $object_color;
 }
 
-h1 {
+#contact_header {
     font-size: 40px;
     font-family: $header_font;
     color: $header_color;
 }
 
-p {
-    font-family: $text_font;
-}
-
 #contact_desc {
+    font-family: $text_font;
     font-size: 20px;
 }
 
@@ -42,6 +39,7 @@ p {
     padding-left: 20px;
     font-size: 20px;
     font-weight: 700;
+    font-family: $text_font;
 }
 
 a {
@@ -55,14 +53,49 @@ a:hover {
     cursor: pointer;
 }
 
-img {
+#contact_icon {
     width: 70px;
 }
 
 #legal_text {
+    font-family: $text_font;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     padding: 40px 0 0 0;
     font-size: 12px;
+}
+
+// Tablet breakpoint
+@media (max-width: 1050px) {
+
+    .Footer_wrapper {
+        text-align: center;
+    }
+}
+
+// Phone breakpoint
+@media (max-width: 550px) {
+
+    #contact_header {
+        font-size: 35px;
+    }
+
+    #contact_desc {
+        font-size: 18px;
+    }
+
+    #contact_text {
+        padding-left: 15px;
+        font-size: 17px;
+    }
+
+    #contact_icon {
+        width: 50px;
+    }
+
+    #legal_text {
+        padding: 30px 0 0 0;
+        font-size: 9px;
+    }
 }
