@@ -19,6 +19,8 @@
     height: 60px;
     background-color: $object_color;
     min-width: 100%;
+
+    border-bottom: 4px solid $header_color;
 }
 
 #left_container {
