@@ -104,6 +104,53 @@ main {
     padding-bottom: 50px;
 }
 
+// Clickable projects
+.ProjectWindow_wrapper {
+    position:absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $object_color;
+    border: solid 2px $header_color;
+    padding: 20px 100px 40px 100px;
+    min-width: 40%;
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.ProjectWindow_wrapper > h1 {
+    font-family: $header_font;
+    align-self: flex-start;
+}
+
+.ProjectWindow_wrapper > img {
+    width: 100%;
+    max-width: 550px;
+    padding: 10px 0;
+}
+
+.ProjectWindow_wrapper > .tag_container {
+    align-self: flex-start;
+    font-size: 20px;
+}
+
+.ProjectWindow_wrapper > .tag_container > p {
+    font-size: 15px;
+}
+
+#PW_desc {
+    padding-top: 10px;
+    font-family: $text_font;
+    font-weight: 600;
+}
+
+#PW_overview {
+    align-self: flex-start;
+    padding-top: 20px;
+    font-family: $text_font;
+}
+
 // Tablet breakpoint
 @media (max-width: 1050px) {
 
