@@ -5,16 +5,105 @@ import roofRunners from "./media/other/roofrunners.jpg"
 import laborated from "./media/other/laborated.png"
 import { useState } from "react"
 
+
+interface Project {
+    id: string;
+    title: string;
+    subtitle: string;
+    imageSrc: string;
+    description: string;
+    tags: { id: string; text: string }[];
+    overview: string[];
+}
+
+const PP_projects: Project[] = [
+    {
+        id: "PP_project1",
+        title: "Candy Crush Saga",
+        subtitle: "King",
+        imageSrc: candycrushlogo,
+        description:
+            "This is the description for Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        tags: [
+            { id: "tag_1", text: "Level Design" },
+            { id: "tag_2", text: "Game Design" }
+        ],
+        overview: [
+            "Overview 1",
+            "Overview 2",
+            "Overview 3",
+            "Overview 4"
+        ]
+    },
+    {
+        id: "PP_project2",
+        title: "Pet Rescue Saga",
+        subtitle: "King",
+        imageSrc: petrescuelogo,
+        description:
+            "This is the description for Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        tags: [
+            { id: "tag_1", text: "Level Design" }
+        ],
+        overview: [
+            "Overview 1",
+            "Overview 2",
+            "Overview 3",
+            "Overview 4"
+        ]
+    }
+];
+
+const OP_projects: Project[] = [
+    {
+        id: "OP_project1",
+        title: "Roof Runners",
+        subtitle: "School Project",
+        imageSrc: roofRunners,
+        description:
+            "This is the description for Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        tags: [
+            { id: "tag_1", text: "Level Design" },
+            { id: "tag_2", text: "Game Design" },
+            { id: "tag_3", text: "Unity" },
+        ],
+        overview: [
+            "Overview 1",
+            "Overview 2",
+            "Overview 3",
+            "Overview 4"
+        ]
+    },
+    {
+        id: "OP_project2",
+        title: "Laborated",
+        subtitle: "School Project",
+        imageSrc: laborated,
+        description:
+            "This is the description for Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        tags: [
+            { id: "tag_1", text: "Level Design" },
+            { id: "tag_2", text: "Game Design" }
+        ],
+        overview: [
+            "Overview 1",
+            "Overview 2",
+            "Overview 3",
+            "Overview 4"
+        ]
+    }
+];
+
 function Jobs() {
 
-    const [showWindow, setShowWindow] = useState(false);
+    const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
-    const handleProjectClick = () => {
-        setShowWindow(true);
+    const handleProjectClick = (index: number) => {
+        setSelectedProject(index);
     };
 
     const handleCloseClick = () => {
-        setShowWindow(false);
+        setSelectedProject(null);
     };
 
     return(
@@ -25,23 +114,20 @@ function Jobs() {
                     <p>Click on a tile to learn more about a project.</p>
                 </div>
                 <div id="projects_container">
-                    <article onClick={handleProjectClick}>
-                        <img src={candycrushlogo} alt="Candy Crush Saga Logo" />
-                        <div className="tag_container">
-                            <p id="tag_1">Level Design</p>
-                            <p id="tag_2">Game Design</p>
-                        </div>
-                        <h3>Candy Crush Saga</h3>
-                        <h4>King</h4>
-                    </article>
-                    <article>
-                        <img src={petrescuelogo} alt="Pet Rescue Saga Logo" />
-                        <div className="tag_container">
-                            <p id="tag_1">Level Design</p>
-                        </div>
-                        <h3>Pet Rescue Saga</h3>
-                        <h4>King</h4>
-                    </article>
+                    {PP_projects.map((project, index) => (
+                        <article key={index} onClick={() => handleProjectClick(index)}>
+                            <img src={project.imageSrc} alt="Candy Crush Saga Logo" />
+                            <div className="tag_container">
+                                {project.tags.map((tag) => (
+                                    <p key={tag.id} id={tag.id}>
+                                    {tag.text}
+                                    </p>
+                                ))}
+                            </div>
+                            <h3>{project.title}</h3>
+                            <h4>{project.subtitle}</h4>
+                        </article>
+                     ))}
                 </div>
             </div>
             <div className="OP_wrapper">
@@ -50,52 +136,42 @@ function Jobs() {
                     <p>Click on a tile to learn more about a project.</p>
                 </div>
                 <div id="projects_container">
-                    <article>
-                        <img src={roofRunners} alt="Roof Runners Logo" />
-                        <div className="tag_container">
-                            <p id="tag_1">Level Design</p>
-                            <p id="tag_2">Game Design</p>
-                            <p id="tag_3">Unity</p>
-                        </div>
-                        <h3>Roof Runners</h3>
-                        <h4>School Project</h4>
-                    </article>
-                    <article>
-                        <img src={laborated} alt="Laborated Logo" />
-                        <div className="tag_container">
-                            <p id="tag_1">Level Design</p>
-                            <p id="tag_2">Game Design</p>
-                        </div>
-                        <h3>Laborated</h3>
-                        <h4>School Project</h4>
-                    </article>
+                {OP_projects.map((project, index) => (
+                        <article key={index} onClick={() => handleProjectClick(index)}>
+                            <img src={project.imageSrc} alt="Candy Crush Saga Logo" />
+                            <div className="tag_container">
+                                {project.tags.map((tag) => (
+                                    <p key={tag.id} id={tag.id}>
+                                    {tag.text}
+                                    </p>
+                                ))}
+                            </div>
+                            <h3>{project.title}</h3>
+                            <h4>{project.subtitle}</h4>
+                        </article>
+                     ))}
                 </div>
             </div>
-            {showWindow && (
+            {selectedProject !== null && (
                 <div className="ProjectWindow_wrapper">
-                    <h1>Project Title</h1>
-                    <img src={candycrushlogo} alt="Candy Crush Saga Logo"/>
-                    <div className="tag_container">
-                        <p id="tag_1">Level Design</p>
-                        <p id="tag_2">Game Design</p>
-                    </div>
-                    <p id="PW_desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </p>
-                    <div id="PW_overview">
-                        <h4>What I did:</h4>
-                        <ul>
-                            <li>Feeding the dog.</li>
-                            <li>Getting coffee to my seniors.</li>
-                            <li>Pushing buttons everyday.</li>
-                            <li>Stealing milk from the cafeteria.</li>
-                            <li>Feeding the dog.</li>
-                            <li>Getting coffee to my seniors.</li>
-                            <li>Pushing buttons everyday.</li>
-                            <li>Stealing milk from the cafeteria.</li>
-                        </ul>
-                    </div>
+                    <button onClick={handleCloseClick}>Close</button>
+                    <h1>{PP_projects[selectedProject].title}</h1>
+                    <img src={PP_projects[selectedProject].imageSrc} alt={PP_projects[selectedProject].title} />
+                <div className="tag_container">
+                     {PP_projects[selectedProject].tags.map((tag) => (
+                        <p id={tag.id} key={tag.id}>{tag.text}</p>
+                    ))}
                 </div>
+                <p id="PW_desc">{PP_projects[selectedProject].description}</p>
+                <div id="PW_overview">
+                    <h4>What I did:</h4>
+                    <ul>
+                        {PP_projects[selectedProject].overview.map((task, index) => (
+                            <li key={index}>{task}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
             )}
         </main>
     );
