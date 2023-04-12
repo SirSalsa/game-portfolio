@@ -108,10 +108,18 @@ function Jobs() {
     };
 
     const handleScroll = () => {
-      const currentPosition = window.pageYOffset;
-      setScrollPosition(currentPosition);
+      // Check if project window is open
+      if (selectedProject != null) {
+        window.removeEventListener('scroll', handleScroll);
+        console.log("Selected project: " + selectedProject);
+        console.log(scrollPosition);
+      }
+      else if (selectedProject == null){
+        const currentPosition = window.scrollY;
+        setScrollPosition(currentPosition);
+      }
     };
-  
+    
     // Add event listener for scroll position
     window.addEventListener("scroll", handleScroll);
   
