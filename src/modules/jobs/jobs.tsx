@@ -3,7 +3,7 @@ import candycrushlogo from "./media/professional/candy_crush_logo.jpg"
 import petrescuelogo from "./media/professional/petrescuelogo.png"
 import roofRunners from "./media/other/roofrunners.jpg"
 import laborated from "./media/other/laborated.png"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 
 interface Project {
@@ -97,39 +97,22 @@ const OP_projects: Project[] = [
 function Jobs() {
 
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
-  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [projectWindowTop, setProjectWindowTop] = useState<string>('50%');
 
-    const handleProjectClick = (index: number) => {
-        setSelectedProject(index);
-    };
+  const handleProjectClick = (index: number) => {
+    const currentPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const windowMidpoint = windowHeight / 2;
+    const topPosition = currentPosition + windowMidpoint;
+    setProjectWindowTop(`${topPosition}px`);
+    setSelectedProject(index);
+  };
+  
 
     const handleCloseClick = () => {
         setSelectedProject(null);
     };
-
-    const handleScroll = () => {
-      // Check if project window is open
-      if (selectedProject != null) {
-        window.removeEventListener('scroll', handleScroll);
-        console.log("Selected project: " + selectedProject);
-        console.log(scrollPosition);
-      }
-      else if (selectedProject == null){
-        const currentPosition = window.scrollY;
-        setScrollPosition(currentPosition);
-      }
-    };
     
-    // Add event listener for scroll position
-    window.addEventListener("scroll", handleScroll);
-  
-    const getProjectWindowTopPosition = (): string => {
-      const windowHeight = window.innerHeight;
-      const windowMidpoint = windowHeight / 2;
-      const positionPercentage = (scrollPosition + windowMidpoint) / windowHeight;
-      const topPosition = Math.floor(positionPercentage * 100) + "%";
-      return topPosition;
-    };
 
     return (
         <main>
@@ -178,7 +161,7 @@ function Jobs() {
             </div>
           </div>
           {selectedProject !== null && (
-            <div className="PW_wrapper" style={{ top: getProjectWindowTopPosition() }}>
+            <div className="PW_wrapper" style={{ top: projectWindowTop }}>
               <button onClick={handleCloseClick}>Close</button>
               <h1>{selectedProject < PP_projects.length ? PP_projects[selectedProject].title : OP_projects[selectedProject - PP_projects.length].title}</h1>
               <img src={selectedProject < PP_projects.length ? PP_projects[selectedProject].imageSrc : OP_projects[selectedProject - PP_projects.length].imageSrc} alt="Project Thumbnail" />

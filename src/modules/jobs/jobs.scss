@@ -108,10 +108,11 @@ main {
 
 // Clickable projects
 .PW_wrapper {
-    position:absolute;
-    top: 65%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
     background-color: $object_color;
     border: solid 2px $header_color;
     padding: 20px 100px 40px 100px;
