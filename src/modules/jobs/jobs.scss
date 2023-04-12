@@ -107,7 +107,7 @@ main {
 }
 
 // Clickable projects
-.ProjectWindow_wrapper {
+.PW_wrapper {
     position:absolute;
     top: 65%;
     left: 50%;
@@ -121,23 +121,23 @@ main {
     flex-flow: column nowrap;
 }
 
-.ProjectWindow_wrapper > h1 {
+.PW_wrapper > h1 {
     font-family: $header_font;
     align-self: flex-start;
 }
 
-.ProjectWindow_wrapper > img {
+.PW_wrapper > img {
     width: 100%;
     max-width: 550px;
     padding: 10px 0;
 }
 
-.ProjectWindow_wrapper > .tag_container {
+.PW_wrapper > .tag_container {
     align-self: flex-start;
     font-size: 20px;
 }
 
-.ProjectWindow_wrapper > .tag_container > p {
+.PW_wrapper > .tag_container > p {
     font-size: 15px;
 }
 

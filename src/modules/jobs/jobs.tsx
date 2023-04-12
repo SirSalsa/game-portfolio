@@ -96,7 +96,8 @@ const OP_projects: Project[] = [
 
 function Jobs() {
 
-    const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
 
     const handleProjectClick = (index: number) => {
         setSelectedProject(index);
@@ -104,6 +105,22 @@ function Jobs() {
 
     const handleCloseClick = () => {
         setSelectedProject(null);
+    };
+
+    const handleScroll = () => {
+      const currentPosition = window.pageYOffset;
+      setScrollPosition(currentPosition);
+    };
+  
+    // Add event listener for scroll position
+    window.addEventListener("scroll", handleScroll);
+  
+    const getProjectWindowTopPosition = (): string => {
+      const windowHeight = window.innerHeight;
+      const windowMidpoint = windowHeight / 2;
+      const positionPercentage = (scrollPosition + windowMidpoint) / windowHeight;
+      const topPosition = Math.floor(positionPercentage * 100) + "%";
+      return topPosition;
     };
 
     return (
@@ -153,7 +170,7 @@ function Jobs() {
             </div>
           </div>
           {selectedProject !== null && (
-            <div className="ProjectWindow_wrapper">
+            <div className="PW_wrapper" style={{ top: getProjectWindowTopPosition() }}>
               <button onClick={handleCloseClick}>Close</button>
               <h1>{selectedProject < PP_projects.length ? PP_projects[selectedProject].title : OP_projects[selectedProject - PP_projects.length].title}</h1>
               <img src={selectedProject < PP_projects.length ? PP_projects[selectedProject].imageSrc : OP_projects[selectedProject - PP_projects.length].imageSrc} alt="Project Thumbnail" />
