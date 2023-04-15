@@ -84,7 +84,7 @@
     transform: scale(1.15);
 }
 
-button {
+#cv_button_wrapper > button {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;

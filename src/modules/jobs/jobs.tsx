@@ -88,6 +88,14 @@ const OP_projects: Project[] = [
             "Overview 1",
             "Overview 2",
             "Overview 3",
+            "Overview 4",
+            "Overview 1",
+            "Overview 2",
+            "Overview 3",
+            "Overview 4",
+            "Overview 1",
+            "Overview 2",
+            "Overview 3",
             "Overview 4"
         ]
     }
@@ -159,8 +167,10 @@ function Jobs() {
           </div>
           {selectedProject !== null && (
             <div className="PW_wrapper" style={{ top: projectWindowTop }}>
-              <button onClick={handleCloseClick}>Close</button>
-              <h1>{selectedProject < PP_projects.length ? PP_projects[selectedProject].title : OP_projects[selectedProject - PP_projects.length].title}</h1>
+              <div id="PW_top">
+                <h1>{selectedProject < PP_projects.length ? PP_projects[selectedProject].title : OP_projects[selectedProject - PP_projects.length].title}</h1>
+                <button onClick={handleCloseClick}>X</button>
+              </div>
               <img src={selectedProject < PP_projects.length ? PP_projects[selectedProject].imageSrc : OP_projects[selectedProject - PP_projects.length].imageSrc} alt="Project Thumbnail" />
               <div className="tag_container">
                 {selectedProject < PP_projects.length ? PP_projects[selectedProject].tags.map((tag) => (
