@@ -116,7 +116,7 @@ main {
     background-color: $object_color;
     border: solid 2px $header_color;
     padding: 20px 100px 40px 100px;
-    min-width: 40%;
+    min-width: 50%;
     align-items: center;
     display: flex;
     flex-flow: column nowrap;
@@ -129,10 +129,6 @@ main {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-}
-
-#PW_top > h1 {
-
 }
 
 #PW_top > button {
@@ -151,12 +147,17 @@ main {
     padding: 10px 0;
 }
 
-.PW_wrapper > .tag_container {
+.PW_content {
+    padding: 10px 20px;
+    background-color: $background_color;
+}
+
+.PW_content > .tag_container {
     align-self: flex-start;
     font-size: 20px;
 }
 
-.PW_wrapper > .tag_container > p {
+.PW_content > .tag_container > p {
     font-size: 15px;
 }
 
@@ -194,6 +195,11 @@ main {
     .OP_wrapper {
         padding-bottom: 20px;
     }
+
+    .PW_wrapper {
+        //padding: 20px 100px 40px 100px;
+        padding: 20px 80px 30px 80px;
+    }
 }
 
 // Phone breakpoint
@@ -211,4 +217,8 @@ main {
         font-size: 11px;
     }
 
+    .PW_wrapper {
+        padding: 20px 10px;
+        min-width: 90%;
+    }
 }

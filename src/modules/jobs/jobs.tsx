@@ -172,28 +172,31 @@ function Jobs() {
             <button onClick={handleCloseClick}>X</button>
           </div>
           <img src={selectedProject < PP_projects.length ? PP_projects[selectedProject].imageSrc : OP_projects[selectedProject - PP_projects.length].imageSrc} alt="Project Thumbnail" />
-          <div className="tag_container">
-            {selectedProject < PP_projects.length ? PP_projects[selectedProject].tags.map((tag) => (
-              <p id={tag.id} key={tag.id}>
-                {tag.text}
-              </p>
-            )) : OP_projects[selectedProject - PP_projects.length].tags.map((tag) => (
-              <p id={tag.id} key={tag.id}>
-                {tag.text}
-              </p>
-            ))}
-          </div>
-          <p id="PW_desc">{selectedProject < PP_projects.length ? PP_projects[selectedProject].description : OP_projects[selectedProject - PP_projects.length].description}</p>
-          <div id="PW_overview">
-            <h4>What I did:</h4>
-            <ul>
-              {selectedProject < PP_projects.length ? PP_projects[selectedProject].overview.map((task, index) => (
-                <li key={index}>{task}</li>
-              )) : OP_projects[selectedProject - PP_projects.length].overview.map((task, index) => (
-                <li key={index}>{task}</li>
+          <div className="PW_content">
+            <div className="tag_container">
+              {selectedProject < PP_projects.length ? PP_projects[selectedProject].tags.map((tag) => (
+                <p id={tag.id} key={tag.id}>
+                  {tag.text}
+                </p>
+              )) : OP_projects[selectedProject - PP_projects.length].tags.map((tag) => (
+                <p id={tag.id} key={tag.id}>
+                  {tag.text}
+                </p>
               ))}
-            </ul>
+            </div>
+            <p id="PW_desc">{selectedProject < PP_projects.length ? PP_projects[selectedProject].description : OP_projects[selectedProject - PP_projects.length].description}</p>
+            <div id="PW_overview">
+              <h4>What I did:</h4>
+              <ul>
+                {selectedProject < PP_projects.length ? PP_projects[selectedProject].overview.map((task, index) => (
+                  <li key={index}>{task}</li>
+                )) : OP_projects[selectedProject - PP_projects.length].overview.map((task, index) => (
+                  <li key={index}>{task}</li>
+                ))}
+              </ul>
+            </div>
           </div>
+
         </div>
       )}
     </main>
