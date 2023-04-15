@@ -31,7 +31,6 @@ const PP_projects: Project[] = [
       "Overview 1",
       "Overview 2",
       "Overview 3",
-      "Overview 4"
     ]
   },
   {
@@ -70,7 +69,8 @@ const OP_projects: Project[] = [
       "Overview 1",
       "Overview 2",
       "Overview 3",
-      "Overview 4"
+      "Overview 4",
+      "Overview 5"
     ]
   },
   {
@@ -102,9 +102,8 @@ function Jobs() {
 
   const handleProjectClick = (index: number) => {
     const currentPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const windowMidpoint = windowHeight / 2;
-    const topPosition = currentPosition + windowMidpoint + 20;
+    const navbaroffset = 70; // Navbar height + 10
+    const topPosition = currentPosition + navbaroffset; 
     setProjectWindowTop(`${topPosition}px`);
     setSelectedProject(index);
   };
