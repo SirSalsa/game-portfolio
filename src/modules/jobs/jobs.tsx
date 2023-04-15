@@ -5,7 +5,6 @@ import roofRunners from "./media/other/roofrunners.jpg"
 import laborated from "./media/other/laborated.png"
 import { useState, useEffect, useRef } from "react"
 
-
 interface Project {
     id: string;
     title: string;
@@ -108,11 +107,9 @@ function Jobs() {
     setSelectedProject(index);
   };
   
-
     const handleCloseClick = () => {
         setSelectedProject(null);
     };
-    
 
     return (
         <main>
