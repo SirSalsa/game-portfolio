@@ -89,14 +89,8 @@ const OP_projects: Project[] = [
       "Overview 2",
       "Overview 3",
       "Overview 4",
-      "Overview 1",
-      "Overview 2",
-      "Overview 3",
-      "Overview 4",
-      "Overview 1",
-      "Overview 2",
-      "Overview 3",
-      "Overview 4"
+      "Overview 5",
+      "Overview 6",
     ]
   }
 ];
@@ -110,7 +104,7 @@ function Jobs() {
     const currentPosition = window.scrollY;
     const windowHeight = window.innerHeight;
     const windowMidpoint = windowHeight / 2;
-    const topPosition = currentPosition + windowMidpoint;
+    const topPosition = currentPosition + windowMidpoint + 20;
     setProjectWindowTop(`${topPosition}px`);
     setSelectedProject(index);
   };

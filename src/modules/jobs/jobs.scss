@@ -115,7 +115,7 @@ main {
     
     background-color: $object_color;
     border: solid 2px $header_color;
-    padding: 20px 100px 40px 100px;
+    padding: 20px 100px 20px 100px;
     min-width: 50%;
     align-items: center;
     display: flex;
@@ -129,6 +129,8 @@ main {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    background-color: $background_color;
+    padding: 15px 15px;
 }
 
 #PW_top > button {
@@ -218,7 +220,39 @@ main {
     }
 
     .PW_wrapper {
-        padding: 20px 10px;
+        padding: 10px 10px;
         min-width: 90%;
+    }
+
+    #PW_top {
+        padding: 5px;
+        font-size: 13px;
+    }
+
+    .PW_wrapper > img {
+        width: 80%;
+        max-width: 550px;
+        padding: 10px 0;
+    }
+
+    .PW_content > .tag_container > p {
+        font-size: 12px;
+    }
+
+    #PW_desc {
+        font-size: 13px;
+        padding-top: 5px;
+    }
+    
+    #PW_overview {
+        padding-top: 10px;
+    }
+
+    #PW_overview > h4 {
+        font-size: 14px;
+    }
+
+    #PW_overview > ul {
+        font-size: 13px;
     }
 }
