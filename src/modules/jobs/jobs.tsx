@@ -22,15 +22,18 @@ const PP_projects: Project[] = [
     subtitle: "King",
     imageSrc: candycrushlogo,
     description:
-      "This is the description for Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Candy Crush Saga is a wildly addictive and colorful match-3 puzzle game that has captured the hearts of millions of players worldwide. With over 10,000 levels to explore, players match colorful candies to progress through the game and unlock exciting rewards. With its simple yet challenging gameplay, it's no wonder Candy Crush Saga has become one of the most popular mobile games of all time.",
     tags: [
       { id: "tag_1", text: "Level Design" },
       { id: "tag_2", text: "Game Design" }
     ],
     overview: [
-      "Overview 1",
-      "Overview 2",
-      "Overview 3",
+      "Creating, designing and iterating upon levels",
+      "Playtesting and giving feedback on levels with the other level designers",
+      "Working in the new features team to design, greenlight and develop new game features",
+      "Participating and leading projects to update / rework older levels",
+      "Collaborating with data scientists to tweak levels to desired performance",
+      "Worked in 2-week sprints using the SCRUM / Agile Method"
     ]
   },
   {
@@ -39,15 +42,14 @@ const PP_projects: Project[] = [
     subtitle: "King",
     imageSrc: petrescuelogo,
     description:
-      "This is the description for Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Pet Rescue Saga is a cute match-3 puzzle game where you need to rescue animals that are trapped. Match blocks of the same color to clear the levels and save the pets. Matching moves are limited so plan carefully to blast as many blocks as possible, solve the puzzles, and save the pets.",
     tags: [
       { id: "tag_1", text: "Level Design" }
     ],
     overview: [
-      "Overview 1",
-      "Overview 2",
-      "Overview 3",
-      "Overview 4"
+      "Creating, designing and iterating upon levels",
+      "Playtesting and giving feedback on levels with the other level designers",
+      "Worked in 2-week sprints using the SCRUM / Agile Method"
     ]
   }
 ];
@@ -59,18 +61,19 @@ const OP_projects: Project[] = [
     subtitle: "School Project",
     imageSrc: roofRunners,
     description:
-      "This is the description for Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Roof Runners is an exhilarating tag game where six players compete as either dogs or cats. As a dog, your mission is to catch all the cats before time runs out, while the cats must evade capture and free any captured feline friends by pressing a button.",
     tags: [
       { id: "tag_1", text: "Level Design" },
       { id: "tag_2", text: "Game Design" },
       { id: "tag_3", text: "Unity" },
     ],
     overview: [
-      "Overview 1",
-      "Overview 2",
-      "Overview 3",
-      "Overview 4",
-      "Overview 5"
+      "Prototyped and iterated on game mechanics",
+      "Creating and maintaining the Game Design Document (GDD)",
+      "Building (Greyboxing) and playtesting levels using Unity",
+      "Creating a level design philosophy in collaboration with the other designers",
+      "Organizing test sessions and collecting feedback",
+      "Project management, with Trello and Google Sheets"
     ]
   },
   {
@@ -79,18 +82,17 @@ const OP_projects: Project[] = [
     subtitle: "School Project",
     imageSrc: laborated,
     description:
-      "This is the description for Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Laborated is a first-person stealth game with some minor horror elements. The game provides a tense and uncomfortable atmosphere as the player explores the dark interiors of the facility.",
     tags: [
       { id: "tag_1", text: "Level Design" },
       { id: "tag_2", text: "Game Design" }
     ],
     overview: [
-      "Overview 1",
-      "Overview 2",
-      "Overview 3",
-      "Overview 4",
-      "Overview 5",
-      "Overview 6",
+      "Design of game mechanics in collaboration with the other designer",
+      "Creating and maintaining the Game Design Document (GDD)",
+      "Drew the initial level layout",
+      "Playtesting and iterating on the level's design, mainly with enemy pathing",
+      "Project management, with Trello and Google Sheets"
     ]
   }
 ];
