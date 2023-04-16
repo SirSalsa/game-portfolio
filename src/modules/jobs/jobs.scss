@@ -178,6 +178,7 @@ main {
 #PW_gallery>button{
     background-color: $header_color;
     border-radius: 15px;
+    display: flex;
 }
 
 #PW_gallery>button:hover {
@@ -186,6 +187,8 @@ main {
 
 #PW_gallery>button>img {
     width: 100px;
+    padding: 5px 0;
+    align-self: center;
 }
 
 .PW_content {
