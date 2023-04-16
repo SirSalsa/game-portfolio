@@ -159,6 +159,9 @@ function Jobs() {
         </div>
       </div>
       {selectedProject !== null && (
+        <div className="overlay"></div>
+      )}
+      {selectedProject !== null && (
         <div className="PW_wrapper" style={{ top: projectWindowTop }}>
           <div id="PW_top">
             <h1>{selectedProject < PP_projects.length ? PP_projects[selectedProject].title : OP_projects[selectedProject - PP_projects.length].title}</h1>
