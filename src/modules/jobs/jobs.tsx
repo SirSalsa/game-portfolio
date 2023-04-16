@@ -3,7 +3,8 @@ import candycrushlogo from "./media/professional/candy_crush_logo.jpg"
 import petrescuelogo from "./media/professional/petrescuelogo.png"
 import roofRunners from "./media/other/roofrunners.jpg"
 import laborated from "./media/other/laborated.png"
-import { useState, useEffect, useRef } from "react"
+import arrow from "./media/gallery/arrow.png"
+import { useState } from "react"
 
 interface Project {
   id: string;
@@ -105,7 +106,7 @@ function Jobs() {
   const handleProjectClick = (index: number) => {
     const currentPosition = window.scrollY;
     const navbaroffset = 70; // Navbar height + 10
-    const topPosition = currentPosition + navbaroffset; 
+    const topPosition = currentPosition + navbaroffset;
     setProjectWindowTop(`${topPosition}px`);
     setSelectedProject(index);
   };
@@ -169,7 +170,15 @@ function Jobs() {
             <h1>{selectedProject < PP_projects.length ? PP_projects[selectedProject].title : OP_projects[selectedProject - PP_projects.length].title}</h1>
             <button onClick={handleCloseClick}>X</button>
           </div>
-          <img src={selectedProject < PP_projects.length ? PP_projects[selectedProject].imageSrc : OP_projects[selectedProject - PP_projects.length].imageSrc} alt="Project Thumbnail" />
+          <div id="PW_gallery">
+            <button>
+              <img id="left_arrow" src={arrow} alt="Go Left" />
+            </button>
+            <img src={selectedProject < PP_projects.length ? PP_projects[selectedProject].imageSrc : OP_projects[selectedProject - PP_projects.length].imageSrc} alt="Project Thumbnail" />
+            <button>
+              <img id="right_arrow" src={arrow} alt="Go Right" />
+            </button>
+          </div>
           <div className="PW_content">
             <div className="tag_container">
               {selectedProject < PP_projects.length ? PP_projects[selectedProject].tags.map((tag) => (

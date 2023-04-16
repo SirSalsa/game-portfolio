@@ -159,10 +159,33 @@ main {
     background-color: white;
 }
 
-.PW_wrapper>img {
+#PW_gallery{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+#left_arrow {
+    transform: rotate(180deg);
+}
+
+#PW_gallery>img {
     width: 100%;
     max-width: 550px;
-    padding: 10px 0;
+    padding: 10px 30px;
+}
+
+#PW_gallery>button{
+    background-color: $header_color;
+    border-radius: 15px;
+}
+
+#PW_gallery>button:hover {
+    background-color: white;
+}
+
+#PW_gallery>button>img {
+    width: 100px;
 }
 
 .PW_content {
@@ -219,8 +242,13 @@ main {
         width: 60%;
     }
 
-    .PW_wrapper>img {
+    #PW_gallery>img {
         width: 80%;
+        padding: 10px 15px;
+    }
+    
+    #PW_gallery>button>img {
+        width: 55px;
     }
 }
 
@@ -249,10 +277,18 @@ main {
         font-size: 13px;
     }
 
-    .PW_wrapper>img {
+    #PW_gallery>img {
         width: 80%;
         max-width: 550px;
-        padding: 10px 0;
+        padding: 10px 5px;
+    }
+
+    #PW_gallery>button{
+        border-radius: 10px;
+    }
+
+    #PW_gallery>button>img {
+        width: 40px;
     }
 
     .PW_content>.tag_container>p {
