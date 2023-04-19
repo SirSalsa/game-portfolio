@@ -14,6 +14,7 @@ interface Project {
   description: string;
   tags: { id: string; text: string }[];
   overview: string[];
+  gallery: { type: "image" | "video"; src: string }[];
 }
 
 const PP_projects: Project[] = [
@@ -35,6 +36,12 @@ const PP_projects: Project[] = [
       "Participating and leading projects to update / rework older levels",
       "Collaborating with data scientists to tweak levels to desired performance",
       "Worked in 2-week sprints using the SCRUM / Agile Method"
+    ],
+    gallery: [
+      { type: "image", src: candycrushlogo },
+      { type: "image", src: "https://assets.epuzzle.info/puzzle/100/698/original.jpg" },
+      { type: "image", src: "https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif?fit=476%2C280&ssl=1" },
+      { type: "video", src: "https://www.youtube.com/embed/R9OHn5ZF4Uo" }
     ]
   },
   {
@@ -51,6 +58,9 @@ const PP_projects: Project[] = [
       "Creating, designing and iterating upon levels",
       "Playtesting and giving feedback on levels with the other level designers",
       "Worked in 2-week sprints using the SCRUM / Agile Method"
+    ],
+    gallery: [
+      { type: "image", src: petrescuelogo }
     ]
   }
 ];
@@ -75,6 +85,9 @@ const OP_projects: Project[] = [
       "Creating a level design philosophy in collaboration with the other designers",
       "Organizing test sessions and collecting feedback",
       "Project management, with Trello and Google Sheets"
+    ],
+    gallery: [
+      { type: "image", src: roofRunners }
     ]
   },
   {
@@ -94,6 +107,9 @@ const OP_projects: Project[] = [
       "Drew the initial level layout",
       "Playtesting and iterating on the level's design, mainly with enemy pathing",
       "Project management, with Trello and Google Sheets"
+    ],
+    gallery: [
+      { type: "image", src: laborated }
     ]
   }
 ];
@@ -102,6 +118,7 @@ function Jobs() {
 
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [projectWindowTop, setProjectWindowTop] = useState<string>('50%');
+  const [galleryIndex, setGalleryIndex] = useState<number>(0);
 
   const handleProjectClick = (index: number) => {
     const currentPosition = window.scrollY;
@@ -109,10 +126,53 @@ function Jobs() {
     const topPosition = currentPosition + navbaroffset;
     setProjectWindowTop(`${topPosition}px`);
     setSelectedProject(index);
+    setGalleryIndex(0); // Reset gallery index
   };
 
   const handleCloseClick = () => {
     setSelectedProject(null);
+    setGalleryIndex(0); // Reset gallery index
+  };
+
+  const renderGalleryItem = (item: { type: string; src: string }) => {
+    switch (item.type) {
+      case "image":
+        return <img src={item.src} alt="Gallery Item" />;
+      case "video":
+        return (
+          <iframe
+            width="100%"
+            height="100%"
+            src={item.src}
+            title="Gallery Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        );
+      default:
+        return null;
+    }
+  };
+
+  const handleGalleryArrowClick = (direction: "left" | "right") => {
+    const currentProjectGallery = selectedProject! < PP_projects.length
+      ? PP_projects[selectedProject!].gallery
+      : OP_projects[selectedProject! - PP_projects.length].gallery;
+
+    if (direction === "left") {
+      if (galleryIndex > 0) {
+        setGalleryIndex(galleryIndex - 1);
+      } else {
+        setGalleryIndex(currentProjectGallery.length - 1); // Go to the last gallery item
+      }
+    } else {
+      if (galleryIndex < currentProjectGallery.length - 1) {
+        setGalleryIndex(galleryIndex + 1);
+      } else {
+        setGalleryIndex(0); // Go back to the start of the gallery
+      }
+    }
   };
 
   return (
@@ -171,11 +231,14 @@ function Jobs() {
             <button onClick={handleCloseClick}>X</button>
           </div>
           <div id="PW_gallery">
-            <button>
+            <button onClick={() => handleGalleryArrowClick("left")}>
               <img id="left_arrow" src={arrow} alt="Go Left" />
             </button>
-            <img src={selectedProject < PP_projects.length ? PP_projects[selectedProject].imageSrc : OP_projects[selectedProject - PP_projects.length].imageSrc} alt="Project Thumbnail" />
-            <button>
+            {renderGalleryItem(
+              selectedProject < PP_projects.length
+                ? PP_projects[selectedProject].gallery[galleryIndex]
+                : OP_projects[selectedProject - PP_projects.length].gallery[galleryIndex]
+            )}            <button onClick={() => handleGalleryArrowClick("right")}>
               <img id="right_arrow" src={arrow} alt="Go Right" />
             </button>
           </div>
