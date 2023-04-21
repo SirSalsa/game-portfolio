@@ -1,7 +1,6 @@
 import "./footer.scss"
 import linkedin from "./media/linkedin.png"
 import email from "./media/email.png"
-import phone from "./media/phone.png"
 
 function Footer() {
     return(
@@ -14,12 +13,6 @@ function Footer() {
                         <img src={email} alt="Email img" id="contact_icon"/>
                     </a>
                     <p id="contact_text">torsten.lareke@hotmail.se</p>
-                </div>
-                <div>
-                    <a href="tel:+46-73268-2109">
-                        <img src={phone} alt="Phone img" id="contact_icon"/>
-                    </a>
-                    <p id="contact_text">(+46) 73268-2109</p>
                 </div>
                 <div>
                     <a href="https://www.linkedin.com/in/torsten-lareke/">
