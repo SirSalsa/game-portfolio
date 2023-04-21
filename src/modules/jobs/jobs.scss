@@ -169,7 +169,7 @@ main {
     transform: rotate(180deg);
 }
 
-#PW_gallery>img {
+#PW_gallery>img, #PW_gallery>iframe {
     width: 100%;
     max-width: 550px;
     padding: 10px 30px;
