@@ -141,7 +141,6 @@ function Jobs() {
       case "video":
         return (
           <iframe
-            
             src={item.src}
             title="Gallery Video"
             frameBorder="0"
