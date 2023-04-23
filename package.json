@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "host": "vite --host",
-    "deploy": "vite build && GH_TOKEN=<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> gh-pages -f -d dist"
+    "deploy": "vite build && gh-pages -f -d dist && git add . && git diff-index --quiet HEAD || git commit -m 'Update and deploy' && git push",
+    "wipe": "rimraf node_modules dist && npm install"  
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -20,6 +21,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
     "gh-pages": "^5.0.0",
+    "rimraf": "^5.0.0",
     "typescript": "^4.9.3",
     "vite": "^4.3.1"
   }
