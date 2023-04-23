@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "host": "vite --host",
-    "deploy": "vite build && gh-pages -f -d dist"
+    "deploy": "vite build && GH_TOKEN=<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> gh-pages -f -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
