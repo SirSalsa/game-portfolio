@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "host": "vite --host",
-    "deploy": "vite build && gh-pages -f -d dist && git add . && git diff-index --quiet HEAD || git commit -m 'Update and deploy' && git push",
+    "deploy": "vite build && gh-pages -f -d dist && git add . && git diff-index --quiet HEAD || git commit -m \"Update and deploy\" && git push",
     "wipe": "rimraf node_modules dist && npm install"  
   },
   "dependencies": {
