@@ -22,7 +22,7 @@ function Intro() {
                     I'm always up for a challenge and eager to try out new things, so feel free to reach out if you're interested in collaborating on a project. Let's create something amazing together!
                 </p>
                 <form id="cv_button_wrapper" target="_blank">
-                    <button id="about_button" formAction="https://drive.google.com/file/d/18Mti1pgJeeQZ0ci-s3oold7Ah3ZnK3iV/view?usp=share_link">
+                    <button id="about_button" formAction="https://drive.google.com/file/d/1P1aOPR0MSWkPle1ylPtduyuIFQodQpId/view?usp=sharing">
                         <img src={cv_url} alt="CV icon" />
                         <p>Download CV</p>
                     </button>
